@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="example@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="example">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="books"/>
+    <schema id="4" parent="1" name="conditions"/>
+    <schema id="5" parent="1" name="data1009"/>
+    <schema id="6" parent="1" name="example1"/>
+    <schema id="7" parent="1" name="example1144"/>
+    <schema id="8" parent="1" name="example1406"/>
+    <schema id="9" parent="1" name="example2153"/>
+    <schema id="10" parent="1" name="homelibrary"/>
+    <schema id="11" parent="1" name="information_schema"/>
+    <schema id="12" parent="1" name="k13"/>
+    <schema id="13" parent="1" name="mysql"/>
+    <schema id="14" parent="1" name="p1407"/>
+    <schema id="15" parent="1" name="performance_schema"/>
+    <schema id="16" parent="1" name="personsdb"/>
+    <schema id="17" parent="1" name="phpmyadmin"/>
+    <schema id="18" parent="1" name="students"/>
+    <schema id="19" parent="1" name="test"/>
+    <schema id="20" parent="1" name="univer"/>
+    <schema id="21" parent="1" name="webdbexample"/>
+    <schema id="22" parent="1" name="webenglish"/>
+    <table id="23" parent="2" name="person"/>
+    <table id="24" parent="2" name="phone"/>
+    <table id="25" parent="2" name="user"/>
+    <column id="26" parent="23" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="27" parent="23" name="firstname">
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="23" name="lastname">
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="29" parent="23" name="age">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="30" parent="23" name="adress">
+      <DataType>varchar(150)|0</DataType>
+    </column>
+    <key id="31" parent="23" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="24" name="number">
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="24" name="type">
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <column id="34" parent="24" name="person_id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="35" parent="24" name="fk_phone_person_idx">
+      <ColNames>person_id</ColNames>
+    </index>
+    <key id="36" parent="24" name="PRIMARY">
+      <ColNames>number</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="24" name="fk_phone_person">
+      <ColNames>person_id</ColNames>
+      <RefSchemaName>example</RefSchemaName>
+      <RefTableName>person</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="38" parent="25" name="LOGIN">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="25" name="PASSWORD">
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="40" parent="25" name="PRIMARY">
+      <ColNames>LOGIN</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
