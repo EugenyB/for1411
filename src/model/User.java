@@ -2,12 +2,17 @@ package model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import java.util.Objects;
 
 /**
  * Created by eugeny on 13.11.2016.
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "User.findAll", query = "select u from User u")
+})
 public class User {
     @Id
     private String login;

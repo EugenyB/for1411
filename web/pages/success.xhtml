@@ -5,11 +5,24 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head><title>Авторизован</title></h:head>
+<h:head>
+    <title>Авторизован</title>
+    <h:outputStylesheet library="css" name="styles.css" />
+</h:head>
 <h:body>
 <f:view>
     <h:outputLabel value="Успешно"/><br/>
     <h:outputText value="#{userBean.userLogin}"/>
+    <h:dataTable value="#{userBean.users}" var="user">
+        <h:column>
+            <f:facet name="header">Login</f:facet>
+            #{user.login}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Password</f:facet>
+            #{user.password}
+        </h:column>
+    </h:dataTable>
 </f:view>
 </h:body>
 </html>

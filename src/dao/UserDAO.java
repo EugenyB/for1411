@@ -5,6 +5,7 @@ import model.User;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * Created by eugeny on 13.11.2016.
@@ -16,5 +17,9 @@ public class UserDAO {
 
     public User find(String login){
         return em.find(User.class, login);
+    }
+
+    public List<User> findAll() {
+        return em.createNamedQuery("User.findAll").getResultList();
     }
 }

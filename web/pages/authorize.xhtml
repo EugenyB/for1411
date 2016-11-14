@@ -14,7 +14,7 @@
             <h:outputLabel for="login" value="Login:"/>
             <h:inputText value="#{userBean.login}" id="login" required="true"/>
             <h:outputLabel for="password" value="Password:"/>
-            <h:inputText value="#{userBean.password}" id="password" required="true" />
+            <h:inputSecret value="#{userBean.password}" id="password" required="true" />
         </h:panelGrid>
         <h:commandButton value="Ok" action="#{userBean.check}"/>
     </h:form>

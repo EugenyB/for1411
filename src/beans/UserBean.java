@@ -7,6 +7,7 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by eugeny on 13.11.2016.
@@ -56,5 +57,9 @@ public class UserBean implements Serializable {
         } else {
             return "fail";
         }
+    }
+
+    public List<User> getUsers() {
+        return userDAO.findAll();
     }
 }
